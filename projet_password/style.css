@@ -3,18 +3,37 @@ body{
     margin: 100px;
 }
 
+/* Il faut utiliser le model de grille*/
 .conteneur{
     display: flex;
     flex-direction: column;
-    justify-content: space-around; /* meme espace entre les box */
-    align-items: center;   /* Centrer tous les elments*/
+    justify-content: space-between; /* meme espace entre les box */
+    /*align-items: center;    Centrer tous les elments*/
     flex-wrap: wrap;  /*retour automatique a la ligne */
-    /* gap: 10px;  espace entre les element du conteneur*/
+    gap: 15px;  /*espace entre les element du conteneur */
+    width: 150px;
+    height: 400px;
+    padding-left: 50px;
+    /*background-color: aqua;*/
 }
 
-.conteneur.check_group.check{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 
+/*
+.conteneur{
+    display: grid;
+    grid-template-columns: 1fr 1f;
+    grid-template-rows: auto;
+    gap: 10px;
+    background-color: aqua;
+    align-items: center; 
+}*/
+
+/* les elments du flex
+  order: 1;
+  flex : 1 taille
+*/
+.conteneur.check{
+    display: grid;
+    grid-template-columns: 1fr 1f;
+    justify-content: space-around;
 }
