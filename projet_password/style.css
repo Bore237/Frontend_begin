@@ -1,0 +1,20 @@
+body{
+    background-color:blueviolet;
+    margin: 100px;
+}
+
+.conteneur{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* meme espace entre les box */
+    align-items: center;   /* Centrer tous les elments*/
+    flex-wrap: wrap;  /*retour automatique a la ligne */
+    /* gap: 10px;  espace entre les element du conteneur*/
+}
+
+.conteneur.check_group.check{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password_Generate</title>
+</head>
+
+<body>
+    <div class="conteneur">
+        <h2> Password Generator </h2>
+
+        <div class="display">
+            <input type="text" id="display_password" name="display_password">
+        </div>
+
+        <div class="check_group">
+            <div class="check">
+                <div class="name_box">  <label for="Length">Password Length</label> </div>
+                <div class="box"> <input type="number" id="Length" name="Length" min="4" max="20" > </div>
+            </div>
+            <div class="check">
+                <div class="name_box"> <label for="uppercase"> Include uppercase letters </label> </div>
+                <div class="box"> <input type="checkbox" id="uppercase" name="uppercase" value="maj"> </div>
+            </div>
+            <div class="check">
+                <div class="name_box"> <label for="lowercase"> Include lowercase letters </label> </div>
+                <div class="box"> <input type="checkbox" id="lowercase" name ="lowercase" value="min"> </div>
+            </div>
+            <div class="check">
+                <div class="name_box"> <label for="numbers"> Include numbers </label> </div>
+                <div class="box"> <input type="checkbox" id="numbers" name="numbers" value="num"> </div>
+            </div>
+            <div class="check">
+                <div class="name_box"> <label for="symbols"> Include symbols </label> </div>
+                <div class="box"> <input type="checkbox" id="symbols" name="symbols" value="sym"> </div>
+            </div>
+        </div>
+
+        <div class="transmit"> 
+            <input type="button" id="btn" name="btn" value="Generate Password" accesskey="s">
+        </div>
+    </div>
+
+</body>
+</html>
