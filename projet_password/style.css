@@ -1,39 +1,61 @@
 body{
-    background-color:blueviolet;
+    background-color:#3b3b98;;
     margin: 100px;
+    padding: 10px;
 }
 
-/* Il faut utiliser le model de grille*/
-.conteneur{
+.conteneur0{
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* meme espace entre les box */
-    /*align-items: center;    Centrer tous les elments*/
+    align-items: center;    /*Centrer tous les elments*/
     flex-wrap: wrap;  /*retour automatique a la ligne */
-    gap: 15px;  /*espace entre les element du conteneur */
-    width: 150px;
-    height: 400px;
-    padding-left: 50px;
-    /*background-color: aqua;*/
+    gap: 10px;        /*espace entre les element du conteneur */
+    width: 350px;
+    max-width: 100%;
+    height: 350px;
+    margin: auto;
+/*     margin-bottom: 125px;
+    margin-top: 125px; */
+    padding: 20px;
+    background-color: #23235b;
+} 
+
+.conteneur0 .display input{
+    width: 310px;
+    height: 35px;
+    padding: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
+.conteneur0 .transmit input{
+    width: 310px;
+    height: 25px;
+    padding: auto;
+    background-color: #3b3b98;;
+}
 
-/*
-.conteneur{
+.conteneur1{
     display: grid;
-    grid-template-columns: 1fr 1f;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    gap: 10px;
-    background-color: aqua;
-    align-items: center; 
-}*/
+    row-gap: 5px;
+}
+
+.conteneur1 .label_box{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.conteneur1 .box{
+    grid-column-start: 3;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 /* les elments du flex
   order: 1;
   flex : 1 taille
 */
-.conteneur.check{
-    display: grid;
-    grid-template-columns: 1fr 1f;
-    justify-content: space-around;
-}

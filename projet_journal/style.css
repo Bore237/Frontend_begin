@@ -4,8 +4,13 @@ body{
     /*padding: 20px;*/
 };
 
-body.div.images_Style{
+body .images_Style{
     margin: auto;
     /*padding: auto;*/
+}
+
+p {
+    margin: auto ;
+    padding: auto;
 }
 

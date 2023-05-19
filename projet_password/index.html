@@ -6,42 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Password_Generate</title>
+    <script src="script.js" defer ></script>
 </head>
 
 <body>
     
-    <div class="conteneur">
+    <form>
+    <div class="conteneur0">
         <h2> Password Generator </h2>
-        <div class="display">
-            <input type="text" id="display_password" name="display_password">
-        </div>
 
-        <div class="check">
-            <label for="Length">Password Length</label> 
-            <input type="number" id="Length" name="Length" min="4" max="20" > 
-        </div>
-        <div class="check">
-            <label for="uppercase"> Include uppercase letters </label> 
-            <input type="checkbox" id="uppercase" name="uppercase" value="maj"> 
-        </div>
-        <div class="check">
-            <label for="lowercase"> Include lowercase letters </label> 
-            <input type="checkbox" id="lowercase" name ="lowercase" value="min"> 
-        </div>
-        <div class="check">
-            <label for="numbers"> Include numbers </label> 
-            <input type="checkbox" id="numbers" name="numbers" value="num"> 
-        </div>
-        <div class="check">
-            <div class="check_label"> <label for="symbols"> Include symbols </label> </div>
-            <div class="check_box"> <input type="checkbox" id="symbols" name="symbols" value="sym"> </div>
+        <div class="display"> <input type="text" id="display_password" name="display_password"> </div>
+
+        <div class="conteneur1">
+            <div class="label_box"> <label for="length">Password Length</label> </div>
+            <div class="box"> <input type="number" id="length" name="length"  value="4" min="4" max="20" > </div>
+
+            <div class="label_box"> <label for="uppercase"> Include uppercase letters </label> </div>
+            <div class="box"> <input type="checkbox" id="uppercase" name="uppercase" value="maj"> </div>
+        
+            <div class="label_box"> <label for="lowercase"> Include lowercase letters </label> </div>
+            <div class="box"> <input type="checkbox" id="lowercase" name ="lowercase" value="min"> </div>
+        
+            <div class="label_box"> <label for="numbers"> Include numbers </label> </div>
+            <div class="box"> <input type="checkbox" id="numbers" name="numbers" checked="true" value="num"> </div>
+        
+            <div class="label_box"> <label for="symbols"> Include symbols </label> </div>
+            <div class="box"> <input type="checkbox" id="symbols" name="symbols" value="sym"> </div>
         </div>
 
         <div class="transmit"> 
-            <input type="button" id="btn" name="btn" value="Generate Password" accesskey="s">
+            <input type="submit" id="btn" name="btn" value="Generate Password" accesskey="s">
         </div>
         <br>
+
     </div>
+    </form>
 
 </body>
 </html>
