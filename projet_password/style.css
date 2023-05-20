@@ -28,7 +28,7 @@ body{
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.conteneur0 .transmit input{
+.conteneur0 button{
     width: 310px;
     height: 25px;
     padding: auto;

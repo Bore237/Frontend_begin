@@ -12,3 +12,9 @@ for (let index = 0; index < baliseCheckbox.length; index++) {
 }
 
 console.log(couleur)
+
+let baliseImage = document.getElementById("imageTest")
+baliseImage.setAttribute("alt", "new alt")
+baliseImage.src = "/images/imagesTest1.PNG"
+baliseImage.remove("classe a retirer")
+baliseImage.add("classe a ajouter")

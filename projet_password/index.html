@@ -15,7 +15,8 @@
     <div class="conteneur0">
         <h2> Password Generator </h2>
 
-        <div class="display"> <input type="text" id="display_password" name="display_password"> </div>
+        <div class="display"> <input type="text" id="display_password" name="display_password" 
+                            readonly style="color: blanchedalmond;"> </div>
 
         <div class="conteneur1">
             <div class="label_box"> <label for="length">Password Length</label> </div>
@@ -28,14 +29,14 @@
             <div class="box"> <input type="checkbox" id="lowercase" name ="lowercase" value="min"> </div>
         
             <div class="label_box"> <label for="numbers"> Include numbers </label> </div>
-            <div class="box"> <input type="checkbox" id="numbers" name="numbers" checked="true" value="num"> </div>
+            <div class="box"> <input type="checkbox" id="numbers" name="numbers" value="num"> </div>
         
             <div class="label_box"> <label for="symbols"> Include symbols </label> </div>
             <div class="box"> <input type="checkbox" id="symbols" name="symbols" value="sym"> </div>
         </div>
 
         <div class="transmit"> 
-            <input type="submit" id="btn" name="btn" value="Generate Password" accesskey="s">
+            <button id="btn" name="btn"> Generate Password </button>
         </div>
         <br>
 
