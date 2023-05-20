@@ -18,32 +18,61 @@ const LOWER_NUMBER_SYMBOL_CASE          = 14
 const UPPER_LOWER_NUMBER_SYMBOL_CASE    = 15 
 const BUFFER_UPPERCASE    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const BUFFFER_LOWERCASE   = 'abcdefghijklmnopqrstuvwxyz'
-const BUFFER_SYMBOLE      = '!@#$%^&*()/;[,]|?<_>-';
+const BUFFER_SYMBOLE      = '!@#$%^&*()/;[,]|?<_>-'
+const BUFFER_NUMBER       = '0123456789'
 const DECALAGE_UPPER      =  0
 const DECALAGE_LOWER      =  1
 const DECALAGE_NUMBER     =  2
 const DECALAGE_SYMBOL     =  3
+const PAS_GENERATION      =  1 
 /*          
     FONCTION OF SYSTHEME
 */
 function fGenerateString(lenghtPassword, bufferHandle, numberType)
 {
     let  sResultaPassword = "";
-    if(numberType == false){
+    if(numberType === false){
         containTypeCase = bufferHandle;
         let charLength = bufferHandle.length;
-        for ( var i = 0; i < lenghtPassword; i++ ) {
+        for ( var i = 0; i < parseInt(lenghtPassword); i++ ) {
             sResultaPassword += containTypeCase.charAt(Math.floor(Math.random() * charLength));
         }
     }else{
-        sResultaPassword = Math.random().toString(10).substring(2,lenghtPassword+2);
+        let maxLenght = lenghtPassword + 2;
+        sResultaPassword = Math.random().toString(10).substring(2,maxLenght);
     }
 
     return sResultaPassword;
 }
 
+function fGenerate2String(index, printOne, printTwo, sResultaPassword){
+    if(index%2 === 0){
+        sResultaPassword += fGenerateString(PAS_GENERATION,printOne, false);
+    }
+    else{
+        sResultaPassword += fGenerateString(PAS_GENERATION, printTwo, false);
+    }
+    return sResultaPassword
+}
+
+function fGenerate3String(count, printOne, printTwo, printThree, sResultaPassword){
+    console.log(count)
+    if(count === 0){
+        sResultaPassword += fGenerateString(PAS_GENERATION,printOne, false);
+    }
+    else if (count === 1 ){
+        sResultaPassword += fGenerateString(PAS_GENERATION,printTwo, false)
+    }
+    else{
+        sResultaPassword += fGenerateString(PAS_GENERATION, printThree, false);
+    }
+    return sResultaPassword;
+}
+
 function fGeneratePassword(lenghtPassword, nMaskPassword){
     let sResultaPassword =" ";
+    lenghtPassword = parseInt(lenghtPassword)
+    let count = 0;
 
     switch(nMaskPassword){
         case UPERCASE:
@@ -55,19 +84,32 @@ function fGeneratePassword(lenghtPassword, nMaskPassword){
                                                 BUFFFER_LOWERCASE, false);
             break;
         case UPER_LOWER_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                sResultaPassword = fGenerate2String(index, BUFFER_UPPERCASE, BUFFFER_LOWERCASE, sResultaPassword)
+            }
             break;
         case NUMBERCASE:
             sResultaPassword = fGenerateString(lenghtPassword, null, true)
             break;
         case UPPER_NUMBER_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                sResultaPassword = fGenerate2String(index, BUFFER_UPPERCASE, BUFFER_NUMBER, sResultaPassword)
+            }
             break;
         case LOWER_NUMBER_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                fGenerate2String(index, BUFFFER_LOWERCASE, BUFFER_NUMBER, sResultaPassword)
+            }
             break;
         case UPPER_LOWER_NUMBER_CASE:
-
+            for (let index = 0; index <lenghtPassword; index++) {
+                sResultaPassword = fGenerate3String(count, BUFFER_UPPERCASE, BUFFFER_LOWERCASE, 
+                                                    BUFFER_NUMBER, sResultaPassword)
+                count++;
+                if(count === 3){
+                    count = 0;
+                }
+            }
             break;
         case SYMBOL_CASE:
             sResultaPassword = fGenerateString(lenghtPassword, 
@@ -75,26 +117,56 @@ function fGeneratePassword(lenghtPassword, nMaskPassword){
                                                 console.log("check", sResultaPassword)
             break;
         case UPPER_SYMBOL_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                sResultaPassword = fGenerate2String(index, BUFFER_UPPERCASE, BUFFER_SYMBOLE, sResultaPassword);
+            }
             break;
         case LOWER_SYMBOL_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                sResultaPassword = fGenerate2String(index, BUFFFER_LOWERCASE, BUFFER_SYMBOLE, sResultaPassword);
+            }
             break;
         case UPPER_LOWER_SYMBOL_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                sResultaPassword = fGenerate3String(count, BUFFER_UPPERCASE, BUFFFER_LOWERCASE, 
+                                                    BUFFER_SYMBOLE, sResultaPassword)
+                                                    count++;
+                if(count === 3){
+                    count = 0;
+                }
+            }
             break;
         case NUMBER_SYMBOL_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                sResultaPassword =  fGenerate2String(index, BUFFER_NUMBER, BUFFER_SYMBOLE, sResultaPassword);
+            }
             break;
         case UPPER_NUMBER_SYMBOL_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                sResultaPassword = fGenerate3String(count, BUFFER_UPPERCASE, BUFFER_SYMBOLE, 
+                                                    BUFFER_NUMBER, sResultaPassword)
+                                                    count++;
+                if(count === 3){
+                    count = 0;
+                }
+            }
             break;
         case LOWER_NUMBER_SYMBOL_CASE:
-
+            for (let index = 0; index < lenghtPassword; index++) {
+                sResultaPassword = fGenerate3String(count, BUFFFER_LOWERCASE, BUFFER_SYMBOLE, 
+                                                    BUFFER_NUMBER, sResultaPassword)
+                                                    count++;
+                if(count === 3){
+                    count = 0;
+                }
+            }
             break;
         case UPPER_LOWER_NUMBER_SYMBOL_CASE:
-
-            break;
+            for (let index = 0; index < (lenghtPassword/2); index++) {
+                sResultaPassword = fGenerate2String(index, BUFFFER_LOWERCASE, BUFFER_SYMBOLE, sResultaPassword);
+                sResultaPassword = fGenerate2String(index, BUFFER_UPPERCASE, BUFFER_NUMBER, sResultaPassword);
+            }
+                break;
         default:
                 sResultaPassword ="Please check choise"  
             break;
