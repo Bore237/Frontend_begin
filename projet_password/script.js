@@ -275,3 +275,9 @@ butonGenerate.addEventListener("click", (event)=>{
     }
 });
 
+
+function copyToClipboard() {
+    const copyText = document.getElementById("display_password");
+    copyText.select();
+    document.execCommand("copy");
+  }

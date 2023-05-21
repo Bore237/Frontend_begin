@@ -12,13 +12,15 @@
   .containt {
     transform-origin: top left;
     width: 100 vw;
-    padding: 100px;
+    padding: 50px;
     transition: transform 1s;
     top: -10px;
     left: 0px;
   }
 
 .content{
+  transform-origin: top left;
+  margin: 50px 0px;
   max-width: 1000px;
 }
 
@@ -27,7 +29,7 @@
 }
 
 img{
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .containt_circle{

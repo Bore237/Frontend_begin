@@ -3,8 +3,8 @@ const feuille = document.querySelector('.containt');
 let stateBtn = false;
 
 // Blocage du border de l'élément
-feuille.style.border = '1px solid black';
-feuille.style.borderRadius = '0';
+// feuille.style.border = '1px solid black';
+// feuille.style.borderRadius = '0';
 
 const transformation = `rotate(${5}deg) translate(${100}px, 
                         ${33}px) rotate(-${50}deg)`;
@@ -35,4 +35,7 @@ circle_DOM.addEventListener("click", (event)=> {
             feuille.style.transform = `rotate(${0}deg)`;
         }
     }
+    
 });
+
+

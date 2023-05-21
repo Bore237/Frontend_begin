@@ -15,21 +15,14 @@ body{
     align-items: center;    /*Centrer tous les elments*/
     flex-wrap: wrap;  /*retour automatique a la ligne */
     gap: 10px;        /*espace entre les element du conteneur */
-    width: 320px;
+    width: 310px;
     max-width: 100%;
-    height: 365px;
+    height: auto;
     margin: auto;
     transform-origin: 50% 50%;
-    padding: 10px;
+    padding: 0px;
     background-color: #23235b;
 } 
-
-.conteneur0 .display input{
-    width: 290px;
-    height: 35px;
-    padding: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
 
 .conteneur0 button{
     width: 290px;
@@ -38,23 +31,76 @@ body{
     background-color: #3b3b98;
 }
 
-.conteneur1{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    row-gap: 5px;
+h2{
+    margin: 5px;
 }
-
+.conteneur1{
+    position: relative;
+    transform-origin: left;
+    display: grid;
+    grid-template-columns: 3fr 0.5fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
+    grid-auto-rows: minmax(50px, auto); /* s'agrandi automatiquement en ligne*/
+    row-gap: 5px;
+    margin: 0px;
+    padding: 0px;
+    width: 300px;
+}
 .conteneur1 .label_box{
     grid-column-start: 1;
     grid-column-end: 2;
 }
-
 .conteneur1 .box{
-    grid-column-start: 3;
+    grid-column-start: 2;
 }
 
 /* les elments du flex
   order: 1;
   flex : 1 taille
 */
+.display .display2{
+    background-color: rgba(0, 0, 0, 0.4);
+    grid-row: 1/3;
+}
+.display2 button{
+    position: absolute;
+    background-color: rgba(97, 76, 175, 0.308);
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 0px;
+    padding: 1px;
+    cursor: pointer;
+    max-width: 30px;
+    height: 35px;
+}
+
+.display .display1{
+    background-color: rgba(0, 0, 0, 0.4);
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.display .display1 input{
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 35px;
+    width: 270px;
+}
+.display{
+    position: relative;
+    transform-origin: left;
+    display: grid;
+    width: 300px;
+    margin: 0px;
+    padding: 0px;
+    grid-template-columns: 270px 30px;
+    grid-template-rows: 35px;
+}
+
+/* align-self: center => modifier la position d'un element*/
+/* flex-grow: 1 ajuste toute la largeur disponible */
+/* flex-basic:2px => modifier espace reserver*/
+/* flex:1  ajuste automatiquement espace */ 
+/* order: 1*/
