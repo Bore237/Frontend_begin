@@ -1,14 +1,51 @@
-* {
+*{
     box-sizing: border-box;
-  }
+}
+body{
+  font-family: 'Lato', sans-serif;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  margin: 0;
+}
 
-  body{
-    overflow-x: hidden;
-    overflow-y: scroll;
-    font-family: 'lato', sans-serif;
-    margin: 0px;
-  }
+.containt {
+  transform-origin: top left;
+  width: 100 vw;
+  padding: 120px;
+  margin: 0px;
+  transition: transform 1s;
+  background-color: #fafafa;
+}
 
+
+.content{
+  transform-origin: top left;
+  margin: 50px 0px;
+}
+.containt h1{
+  margin: 0px;
+}
+img{
+  max-width: 100%;
+}
+small {
+    font-style: italic;
+}
+
+
+.containt_circle{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0% 0% 100% 0% ;
+  background-color: red;
+  height: 150px;
+  width: 150px;
+  top: 0px;
+  left: 0px;
+}
 .containt_circle button{
   display: inline-block;
   border: none;
@@ -18,56 +55,25 @@
   padding: 0px;
 }
 
-.containt_circle{
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0% 0% 100% 0% ;
-  background-color: red;
-  height: 100px;
-  width: 100px;
-  top: 0px;
-  left: 0px;
-}
 
-.containt {
-    transform-origin: top left;
-    width: 100 vw;
-    padding: 90px;
-    margin: 0px;
-    transition: transform 1s;
-}
-
-.content{
-  transform-origin: top left;
-  margin: 50px 0px;
-  max-width: 1000px;
-}
-
-.containt h1{
-  margin: 0px;
-}
-
-img{
-  max-width: 100%;
-}
-
-.navClass-nav + nav li{
-  transform: translateX(0);
-  transition-delay: 0.5s;
-}
 .navClass {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  gap: 20px;
   position: fixed;
-  bottom: 15px ;
-  left: 15;
-}
-.navClass li{
-  list-style-type: none;
+  bottom: 0px;
+  left: 0px;
+  display: grid;
+  grid-template-columns: 35px 110px;
+  grid-template-rows: repeat(3, 20px);
+  width: 150;
+  height: 20;
+  color: white;
+  margin: 20px 20px;
+  padding: 10px 0px;
+  row-gap: 35px;
+  column-gap: 2px;
 }
 
+.navClass .text_nav {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}

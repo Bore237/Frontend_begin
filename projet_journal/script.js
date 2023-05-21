@@ -25,7 +25,7 @@ btnOpenClose[OPEN_BTN].addEventListener("click", (event)=> {
             btnOpenClose[CLOSE_BTN].style.display = "block"
             stateBtn = true;
             feuille.style.transform = `rotate(-${20}deg)`;
-            blockRaduis.style.transform = `rotate(${20}deg)`;
+            blockRaduis.style.transform = `rotate(-${340}deg)`;
         }
     }
 });
