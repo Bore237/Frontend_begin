@@ -1,14 +1,13 @@
-const circle_DOM = document.querySelector('.containt_circle input');
+const CLOSE_BTN = 0
+const OPEN_BTN = 1
+
+const btnOpenClose = document.querySelectorAll('.containt_circle button');
+const blockRaduis = document.querySelector('.containt_circle');
 const feuille = document.querySelector('.containt');
+btnOpenClose[0].style.display = "none"
+
+
 let stateBtn = false;
-
-// Blocage du border de l'élément
-// feuille.style.border = '1px solid black';
-// feuille.style.borderRadius = '0';
-
-const transformation = `rotate(${5}deg) translate(${100}px, 
-                        ${33}px) rotate(-${50}deg)`;
-
 
 // document.addEventListener('mousemove', function(event) {
 //     var x = event.clientX;
@@ -16,26 +15,33 @@ const transformation = `rotate(${5}deg) translate(${100}px,
 //     console.log('Coordonnées de la souris : ' + x + ', ' + y);
 // });
 
-const point ={x: 90, y: 600, angle: 25}
+//btnOpenClose.forEach(boutton => {})
 
-circle_DOM.addEventListener("click", (event)=> {
-    if(event.button === 0){
+//If on click on the open buton
+btnOpenClose[OPEN_BTN].addEventListener("click", (event)=> {
+    if((event.button === 0)){
         if(stateBtn === false){
-            circle_DOM.value = "Close";
+            btnOpenClose[OPEN_BTN].style.display = "none";
+            btnOpenClose[CLOSE_BTN].style.display = "block"
             stateBtn = true;
             feuille.style.transform = `rotate(-${20}deg)`;
-            // let x = (feuille.offsetLeft - point.x) * Math.cos(point.angle) - 
-            // (feuille.offsetTop - point.y) * Math.sin(point.angle) + point.x;
-
-        }else{
-            feuille.style.left = `${0}px`;
-            feuille.style.top = `${0}px`;
-            circle_DOM.value = "Open";
-            stateBtn = false
-            feuille.style.transform = `rotate(${0}deg)`;
+            blockRaduis.style.transform = `rotate(${20}deg)`;
         }
     }
-    
 });
+
+//if on the click on the close button
+btnOpenClose[CLOSE_BTN].addEventListener("click", (event)=> {
+    if(event.button === 0){
+        if(stateBtn === true){
+            btnOpenClose[CLOSE_BTN].style.display = "none";
+            btnOpenClose[OPEN_BTN].style.display = "block";
+            stateBtn = false;
+            feuille.style.transform = `rotate(${0}deg)`;
+            blockRaduis.style.transform = `rotate(${0}deg)`;
+        }
+    }
+}); 
+
 
 

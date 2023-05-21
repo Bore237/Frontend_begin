@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     <script src="script.js" defer></script>
     <title>dog_journal</title>
 </head>
@@ -13,7 +14,10 @@
 <body>
     <div class="containt">
         <div class="containt_circle">
-            <input type="button" value="Open" style="background-color: red;">
+            <button id="btn_close"> <iconify-icon icon="eva:close-fill" style="color: white;" 
+                width="50px" height="55px"></iconify-icon> </button>
+            <button id="btn_open"> <iconify-icon icon="material-symbols:menu-open" style="color: white;
+                " width="40" height="55"></iconify-icon> </button>
         </div>
 
         <div class="content">

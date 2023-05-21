@@ -9,14 +9,35 @@
     margin: 0px;
   }
 
-  .containt {
+.containt_circle button{
+  display: inline-block;
+  border: none;
+  width: 55px;
+  height: 55px;
+  background-color: red;
+  padding: 0px;
+}
+
+.containt_circle{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0% 0% 100% 0% ;
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  top: 0px;
+  left: 0px;
+}
+
+.containt {
     transform-origin: top left;
     width: 100 vw;
-    padding: 50px;
+    padding: 90px;
+    margin: 0px;
     transition: transform 1s;
-    top: -10px;
-    left: 0px;
-  }
+}
 
 .content{
   transform-origin: top left;
@@ -30,18 +51,6 @@
 
 img{
   max-width: 100%;
-}
-
-.containt_circle{
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 60px solid red;
-  border-radius: 0% 0% 100% 0% ;
-  top: -1px;
-  left: -1px;
-
 }
 
 .navClass-nav + nav li{
