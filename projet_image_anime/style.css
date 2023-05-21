@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+*body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.slide_containt{
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide_containt .left_slide{
+    width: 30%;
+    height: 100%;
+    position: absolute;
+}

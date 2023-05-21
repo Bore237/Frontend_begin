@@ -171,8 +171,6 @@ function fGeneratePassword(lenghtPassword, nMaskPassword){
                 sResultaPassword ="Please check choise"  
             break;
     }
-
-
     return sResultaPassword
 }
 
@@ -190,6 +188,28 @@ let stateNumber     = false;
 /*
         MAIN OF SYSTHEME
 */
+
+// // Sélectionner le champ de test
+// const champDeTest = document.querySelector('#display_password');
+
+// // Créer un bouton de copie
+// const boutonCopier = document.createElement('button');
+// boutonCopier.textContent = 'Copier';
+
+// // Ajouter le bouton de copie à la page
+// champDeTest.parentNode.insertBefore(boutonCopier, champDeTest.nextSibling);
+
+// // Ajouter un événement de clic au bouton de copie
+// boutonCopier.addEventListener('click', () => {
+//   // Sélectionner le contenu du champ de test
+//   champDeTest.select();
+//   // Copier le contenu sélectionné
+//   document.execCommand('copy');
+// });
+
+
+
+
 
 //Recuperer les valeurs des boutons
 let lenghtPassword = document.getElementById("length");

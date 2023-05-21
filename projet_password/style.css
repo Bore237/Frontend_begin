@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color:#3b3b98;;
     margin: 100px;
@@ -11,28 +15,27 @@ body{
     align-items: center;    /*Centrer tous les elments*/
     flex-wrap: wrap;  /*retour automatique a la ligne */
     gap: 10px;        /*espace entre les element du conteneur */
-    width: 350px;
+    width: 320px;
     max-width: 100%;
-    height: 350px;
+    height: 365px;
     margin: auto;
-/*     margin-bottom: 125px;
-    margin-top: 125px; */
-    padding: 20px;
+    transform-origin: 50% 50%;
+    padding: 10px;
     background-color: #23235b;
 } 
 
 .conteneur0 .display input{
-    width: 310px;
+    width: 290px;
     height: 35px;
     padding: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 .conteneur0 button{
-    width: 310px;
+    width: 290px;
     height: 25px;
     padding: auto;
-    background-color: #3b3b98;;
+    background-color: #3b3b98;
 }
 
 .conteneur1{
@@ -49,10 +52,6 @@ body{
 
 .conteneur1 .box{
     grid-column-start: 3;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 /* les elments du flex
