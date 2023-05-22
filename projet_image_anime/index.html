@@ -7,7 +7,6 @@
     <title>translator</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="slide_containt">
@@ -16,12 +15,6 @@
                 <h1 id="titre"> Flying Eagle </h1>
                 <p id="paragraph">in the sunset</p>
             </div>
-            <script>
-                var titre = document.getElementById("titre1");
-
-                // Modifier la valeur du titre
-                titre.innerHTML = "Lonely castle";
-            </script>
             <!-- <div class="2_left_slide">
                 <h1>Lonely castle</h1>
                 <p>in the wilderness</p>
@@ -36,12 +29,65 @@
             </div> -->
         </div>
         <div class="rigth_slide"> </div>
-        <div class="bouton">
-            <button id="bouton_up"> <iconify-icon icon="wi:direction-up" style="color: gray;" width="35" 
-                                    height="40"></iconify-icon></button>
-            <button id="bouton_down"> </button>
+        <div class="bouton ">
+            <button id="bouton_up"> 
+                <iconify-icon icon="ph:arrow-up-bold" style="color: gray;" width="35" height="35"></iconify-icon>
+                </button>
+            <button id="bouton_down">  <iconify-icon icon="ph:arrow-up-bold" style="color: gray;" width="35" height="35"></iconify-icon>
+            </button> </button>
         </div>
     </div>
 
+    <script>
+        const titre = document.getElementById("titre");
+        const para =  document.getElementById("paragraph");
+        const left_slide = document.querySelector(".left_slide")
+        const btn = document.querySelectorAll(".bouton button");
+        const btnUp = btn[0];
+        const btnDown = btn[1];
+        let pos = 0;
+        
+
+        // Modifier la valeur du titre
+        const obj_write = {
+            buffer_h1: ["Lonely castle","Bluue Sky",
+                    "Flying Eagle","nature flower"],
+            buffer_p: ["in the wilderness","whith it's moutain",
+                         "in the sunset","all in pink"],
+            buffer_color: ["red", "blue", "orange", "pink"]
+        }
+
+        const buffer_p =["in the wilderness","whith it's moutain",
+                         "in the sunset","all in pink",]
+
+        titre.innerHTML = obj_write.buffer_h1[pos];
+        para.innerHTML = obj_write.buffer_p[pos];
+        left_slide.style.backgroundColor = obj_write.buffer_color[pos];
+
+        btnUp.onclick = () =>{
+            if(pos >= 3){
+                pos=0
+            }else{
+                pos++;
+            }
+            
+            titre.innerHTML = obj_write.buffer_h1[pos];
+            para.innerHTML = obj_write.buffer_p[pos];
+            left_slide.style.backgroundColor = obj_write.buffer_color[pos];
+        }
+
+        btnDown.onclick = () =>{
+            if(pos <= 0){
+                pos=3
+            }else{
+                pos--;
+            }
+            
+            titre.innerHTML = obj_write.buffer_h1[pos];
+            para.innerHTML = obj_write.buffer_p[pos];
+            left_slide.style.backgroundColor = obj_write.buffer_color[pos];
+        }
+        
+    </script>
 </body>
 </html>
