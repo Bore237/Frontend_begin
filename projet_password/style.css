@@ -4,8 +4,8 @@
 
 body{
     background-color:#3b3b98;;
-    margin: 100px;
-    padding: 10px;
+    margin: calc(100vh/4) auto;
+    padding: auto;
 }
 
 .conteneur0{
@@ -16,7 +16,7 @@ body{
     flex-wrap: wrap;  /*retour automatique a la ligne */
     gap: 10px;        /*espace entre les element du conteneur */
     width: 310px;
-    max-width: 100%;
+    max-width: 100vw;
     height: auto;
     margin: auto;
     transform-origin: 50% 50%;

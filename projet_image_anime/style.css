@@ -74,10 +74,14 @@
     opacity: 0.9;
 }
 
-.bouton button:hover{
+#bouton_down:hover{
     opacity: 1.5;
       
 }
+#bouton_up:hover{
+    opacity: 1.5;
+}
+
 #bouton_up{
     padding-top: 10px;
     padding-left: 5px;
