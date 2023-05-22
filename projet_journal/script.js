@@ -4,8 +4,9 @@ const OPEN_BTN = 1
 const btnOpenClose = document.querySelectorAll('.containt_circle button');
 const blockRaduis = document.querySelector('.containt_circle');
 const feuille = document.querySelector('.containt');
+const nav = document.querySelector('nav');
 btnOpenClose[0].style.display = "none"
-
+nav.style.display = "none"
 
 let stateBtn = false;
 
@@ -26,6 +27,7 @@ btnOpenClose[OPEN_BTN].addEventListener("click", (event)=> {
             stateBtn = true;
             feuille.style.transform = `rotate(-${20}deg)`;
             blockRaduis.style.transform = `rotate(-${340}deg)`;
+            nav.style.display = "grid"
         }
     }
 });
@@ -39,6 +41,7 @@ btnOpenClose[CLOSE_BTN].addEventListener("click", (event)=> {
             stateBtn = false;
             feuille.style.transform = `rotate(${0}deg)`;
             blockRaduis.style.transform = `rotate(${0}deg)`;
+            nav.style.display = "none"
         }
     }
 }); 
