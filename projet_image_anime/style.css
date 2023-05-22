@@ -29,11 +29,10 @@
 
 .rigth_slide{
     position: absolute;
-    overflow: hidden;
     left: 30%;
     width: 70%;
     height: 100%;
-    background-image: url(/images/imagesTest.PNG) ;
+    background-image: url('https://images.unsplash.com/photo-1508768787810-6adc1f613514?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=e27f6661df21ed17ab5355b28af8df4e&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');
 }
 
 .left_slide h1 {
@@ -75,6 +74,10 @@
     opacity: 0.9;
 }
 
+.bouton button:hover{
+    opacity: 1.5;
+      
+}
 #bouton_up{
     padding-top: 10px;
     padding-left: 5px;
