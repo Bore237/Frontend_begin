@@ -27,6 +27,7 @@ btnOpenClose[OPEN_BTN].addEventListener("click", (event)=> {
             stateBtn = true;
             feuille.style.transform = `rotate(-${20}deg)`;
             blockRaduis.style.transform = `rotate(-${340}deg)`;
+            blockRaduis.style.position = 'fixed';
             nav.style.display = "grid"
         }
     }
@@ -41,6 +42,7 @@ btnOpenClose[CLOSE_BTN].addEventListener("click", (event)=> {
             stateBtn = false;
             feuille.style.transform = `rotate(${0}deg)`;
             blockRaduis.style.transform = `rotate(${0}deg)`;
+            blockRaduis.style.position = 'fixed';
             nav.style.display = "none"
         }
     }

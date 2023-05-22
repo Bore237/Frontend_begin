@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carrousel</title>
+</head>
+    <body>
+        <div id="carrousel">
+            <div id="container">
+                <img src="/images/fleche.PNG"  class="bouton" id="d" />
+                <img src="/images/fleche.PNG"   class="bouton" id="g" />
+            </div>
+        </div>
+        <script>
+            document.body.onload = function(){
+                nbrImages =5;
+                position = 0;
+                container = document.getElementById("container");
+                g = document.getElementById("g");
+                d = document.getElementById("d");
+                //container.style.width=(800*nbrImages) + "px";
+                //Creons nos images
+                for(i=1; i<=nbrImages; i++){
+                }
+                container.style.width= "800px"
+                div=document.createElement("div");
+                div.className="photo";
+                div.style.backgroundImage=`url('/images/carrouselImg3.PNG')`;
+                //appliquer cela a notre page
+                container.appendChild(div);
+            }
+
+            g.addEventListener(("click"), () =>{
+                if(position >5){
+                    position=1;
+                }else{
+                    position++;
+                }
+                div.style.backgroundImage=`url('/images/carrouselImg${position}.PNG')`;
+                container.style.transition= "all 0.5s ease"
+            })
+
+            d.onclick = () =>{
+                if(position <= 0){
+                    position=1;
+                }else{
+                    position--;
+                }
+                div.style.backgroundImage=`url('/images/carrouselImg${position}.PNG')`;
+                if(position >=5){
+                    position=1;
+                }
+                container.style.transition= "all 0.5s ease"
+                //container.style.transform= `translate(${position+800}px)`
+            }
+
+        </script>
+    </body>
+</html>
