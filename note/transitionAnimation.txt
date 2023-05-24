@@ -1,0 +1,43 @@
+<style>
+/* Il sont réaliser pour les animation simple  */
+.myClassIfNeedAnimation{
+    transition: scale(juste le scale sera concerner) 1s(durer animation) 
+                ease-in(le type animation ) 2s(delay ou periode)
+    transition-property: scale, rotate (liste les propriété concernner)
+}
+
+.myClassContentAnimation::hover{
+    scale: 1
+    rotate: 90deg
+    translate : 10px
+}
+
+/* Utilise animation pour les animation complexe */
+.myClassIfNeedAnimation{
+    animation: nonAnimation 
+                2s(temps animation) 
+                typeAnimation:  forward(arrete après les deux seconde)
+                                infinie(repète a infinie)
+                                3 (repète 3 fois et s'arrête)
+                                infinie alternate(repète a infinie en aler et retour)
+                2s(le temps de pause après la prochaine animation)
+                property: ease-in etc
+    animation-fill-mode: forward(arrete après les deux seconde)
+}
+.myClassIfNeedAnimation::hover{
+    animation-play-state: paused (ce stop lorsque on passe dessus)
+
+}
+    /* Création de animation avec Keyframe */
+    @keyframes nonAnimation{
+        0%{ /* a 0% de animation on fait quoi? */
+            translate: 100px
+        }
+        70%{ /* a 0% de animation on fait quoi? */
+            translate: 100px(xValue) -250px(value)
+        }
+        100%{ /* a 0% de animation on fait quoi? */
+            translate: 200px(xValue) -250px(value)
+        }
+    }
+</style>

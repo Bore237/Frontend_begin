@@ -1,0 +1,20 @@
+/* Faire une translation automatique après un temps */
+/* boucle infinie*/
+/* .classe_contenantImage{
+    animation: glisse 10s infinite ; 
+}
+
+@keyframes glisse{
+    0%{
+        transform: translate(0);
+    }
+    33%{
+        transform: translate(-500px);
+    }    
+    66%{
+        transform: translate(-1000px);
+    }
+    0%{
+        transform: translate(0);
+    }
+} */

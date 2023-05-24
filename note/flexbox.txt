@@ -1,0 +1,31 @@
+/*
+display: flex
+//Proprieter conteneur flex
+flex direction: row ou colom (x ou y)
+flex direction: rowreverse ou colom reverce (x ou y) inverse le sens
+justify-content: flex start ( debut fin) axe du flex directory
+                space between(espace normalement entre item)
+                flex arround ou evenly (espace normalement depuis les bord de l'item)
+align items: flex start ( debut fin) axe secondaire
+                space between(espace normalement entre item)
+                flex arround ou evenly (espace normalement depuis les bord de l'item)
+                baseline (item s'alligne en fonction du text)
+                strecth (etire les items si on'a pas spécifier une Hauteur)
+
+flex-wrap : nowrap: pas de retour a la ligne
+            wrap: permetre le retour a la ligne
+            wrap reverse : permetre le retour a la ligne mais inverse
+
+align-content: me paramètre mais il faut au moins deux lignes ou colones
+
+gap : 20px 20px espacement ligne ou colone
+
+//proprier des items
+    align-self: center (centre un seul item par raport au flex directory)
+    order: 0 1 2 etc (les elements seront classés pas ordre croissant)
+    flex-grow: 1 (les items s'aggrandissent et occupe  espace restant)
+    flex-grow: 2  (l'items occoupe deux fois plus d'espace restant que les autres)
+    flex-shrink: 1  incompatible  avec flex wrap(prroportion a laquelle un element ce reduit par rapport au autre)
+    flex-basis: 50% la taille de base est a 50%du conteneur
+    flex: grow, shrink, flex basis,
+*/
