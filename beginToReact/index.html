@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scripts/script.js" defer> </script>
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/main.js" defer> </script>
+</head>
+
+<body>
+
+    <h1 id="root">  </h1>
+
+<!-- Inclue les elements de react -->
+    <script 
+        crossorigin 
+        src="https://unpkg.com/react@18/umd/react.development.js">
+    </script>
+    <script 
+        crossorigin 
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script>
+
+<!-- Inclure babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        //Verifier la connections avec react
+        //console.log(React);
+
+        function Header(){
+            const titre = "La maison jungle";
+            return (<h1> {titre.toUpperCase()} </h1>);
+        }
+        function Description(){
+            const text = "Ici achetez toutes les plantes dont vous avez toujours rêvé "
+            const emojis = "😊😊😊😊"
+            return(<p>{text.slice(0,11) + emojis} </p>)
+        }
+        function Cart(){
+            const  monsteraPrice = 8;
+            const  lierrePrice = 10; 
+            const   fleursPrice = 15;
+           
+            return( <div> 
+                        <h2>Panier</h2>
+                        <ul>
+                            
+                            <li> Monstera: {monsteraPrice}€</li>
+                            <li>Lierre: {lierrePrice}€ </li>
+                            <li> Fleurs: {fleursPrice}€ </li>
+                        </ul> 
+                        Total : {monsteraPrice + lierrePrice + fleursPrice }€
+                    </div>
+            )
+        }
+
+        //gréffer notre react anotre html
+        ReactDOM.render(<React.Fragment> <Header/> <Cart/> </React.Fragment> ,
+                        document.getElementById("root"));
+    
+        //Regroupons notre titre et description dans une banière
+        function Banner(){
+            return(<div>
+                    <Header/>
+                    <Cart/>
+                    <Description/>
+                </div>
+            )
+        }
+    
+    </script>
+</body>
+</html>
