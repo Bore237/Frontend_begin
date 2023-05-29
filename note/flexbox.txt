@@ -29,3 +29,9 @@ gap : 20px 20px espacement ligne ou colone
     flex-basis: 50% la taille de base est a 50%du conteneur
     flex: grow, shrink, flex basis,
 */
+
+
+Nous avons créé une div avec la classe "container" pour centrer le display grid sur l'axe Y et X.
+Nous avons utilisé la propriété "display: flex" pour centrer la div "container" sur l'axe Y et X.
+Nous avons utilisé la propriété "justify-content: center" pour centrer horizontalement la div "container".
+Nous avons utilisé la propriété "align-items: center" pour centrer verticalement la div "container".
