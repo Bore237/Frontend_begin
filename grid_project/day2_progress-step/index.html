@@ -10,30 +10,64 @@
 <body>
     <div class="containt">
         <div class="grid-figure">
-            <div class="grid-circle-elmt elmt1"> 
-                <h3> 1</h3> 
-            </div>
-            <div class="grid-bar-elmt">  </div>
-            <div class="grid-circle-elmt"> 
-                <h3> 2</h3> 
-            </div>
-            <div class="grid-bar-elmt"> </div>
-            <div class="grid-circle-elmt"> 
-                <h3> 3</h3> 
-            </div>
-            <div class="grid-bar-elmt">  </div>
-            <div class="grid-circle-elmt"> 
-                <h3> 4</h3>
-            </div>
+            <div class="grid-circle-elmt" id="elmt1">1</div>
+            <div class="grid-bar-elmt" id="elmt2"> </div>
+            <div class="grid-circle-elmt">2</div>
+            <div class="grid-bar-elmt" id="elmt3"></div>
+            <div class="grid-circle-elmt">3</div>
+            <div class="grid-bar-elmt" id="elmt4"> </div>
+            <div class="grid-circle-elmt">4</div>
         </div>  
         <div class="grid-btn">
-            <div class="grid-btn"> 
+            <div> 
                 <button id="btn-prev">Prev</button>    
             </div>
-            <div class="grid-btn"> 
+            <div> 
                 <button id="btn-next" >Next</button>    
             </div>
         </div>
     </div>
 </body>
+<script>
+
+    const statePrevBtn = document.getElementById('btn-prev');
+    const stateNextBtn = document.getElementById('btn-next');
+    const circleElement = document.querySelectorAll('.grid-circle-elmt')
+    const barElement = document.querySelectorAll('.grid-bar-elmt')
+    let levelProgress = 0;
+
+    //listen event
+    stateNextBtn.addEventListener("click",(event) =>{
+        if(event.button === 0){
+            if(levelProgress < 3){
+                barElement[levelProgress].style.border= '4px solid  #3488DB'
+                levelProgress++;
+                circleElement[levelProgress].style.border= '4px solid  #3488DB'
+                statePrevBtn.style.backgroundColor='#3488DB'
+                if(levelProgress === 3){
+                    stateNextBtn.style.backgroundColor='#e0e0e0' 
+                    statePrevBtn.style.backgroundColor='#3488DB' 
+                }
+            }
+
+        }
+    })
+
+    statePrevBtn.addEventListener("click",(event) =>{
+        if(event.button === 0){
+            if(levelProgress > 0){
+                circleElement[levelProgress].style.border= '4px solid  #e0e0e0'
+                levelProgress--;
+                barElement[levelProgress].style.border= '4px solid  #e0e0e0'
+                stateNextBtn.style.backgroundColor='#3488DB'
+                if(levelProgress === 0){
+                    statePrevBtn.style.backgroundColor='#e0e0e0' 
+                    stateNextBtn.style.backgroundColor='#3488DB' 
+                }
+            }
+
+        }
+    })
+   
+</script>
 </html>

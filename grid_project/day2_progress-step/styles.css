@@ -1,22 +1,24 @@
 *{
     margin: 0px;
     box-sizing: border-box;
+    background-color: #F6F7FB;
 }
 
 .containt{
     display: grid;
     grid-template-columns: 400px ;
-    grid-template-rows: 1fr 30px 30px 1fr ;
+    grid-template-rows: 1fr 50px 50px 1fr ;
     align-items: center;
-    justify-content: center ;
+    justify-content: space-evenly ;
     margin: 0px;
     height: 100vh;
+    grid-row-gap: 20px;
 }
 
 .grid-figure{
     grid-row: 2/3;
     display: grid;
-    grid-template-columns: 30px 70px 30px 70px 30px 70px 30px 70px;
+    grid-template-columns: 30px 70px 30px 70px 30px 70px 30px ;
     grid-template-rows: 40px ;
     align-items: center; /*Centrer les elmt a y */
     justify-content: center;
@@ -26,28 +28,43 @@
 .grid-btn{
     grid-row: 3/4;
     display: grid;
-    grid-template-columns: 70px 70px;
-    grid-template-rows: 40px ;
+    grid-template-columns: 90px 90px;
+    grid-template-rows: 50px ;
     align-items: center; /*Centrer les elmt a y */
     justify-content: center;
-    grid-gap: 10px;
-    margin: 0px;
+    grid-gap: 20px;
+    margin: 0px; 
 }
 
+button{
+    color: #FFFFFF;
+    background-color: #e0e0e0;
+    height: 40px;
+    width: 90px;
+    border-radius: 10%;
+}
+
+#btn-next{
+    background-color: #3488DB
+}
+#elmt1{
+    border: 4px solid  #3488DB;
+}
 
 .grid-circle-elmt{
-    border: 4px solid grey;
+    width: 30px;
+    height: 30px;
+    border: 4px solid #e0e0e0;
     opacity: 0.7;
     border-radius: 50%;
     margin: 0;
-    width: 30px;
-    height: 30px;
     text-align: center;
+    background-color: #F6F7FB;
 }
 
 .grid-bar-elmt{
     border: none;
-    border-top: 4px solid grey;
+    border-top: 4px solid #e0e0e0;
     opacity: 0.7;
     width: 70px;
     margin: 0;
