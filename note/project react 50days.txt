@@ -1,0 +1,143 @@
+//grid project
+Days 2: {
+    SizeTable: 9c*3l 
+    bouton: next and prev (change style)
+}
+
+Days 9: {
+    SizeTable: 3c*3l 
+    bouton: next and prev (change style)
+} 
+
+Days 16: {
+    SizeTable: 6c*6l 
+    bacgrouncolormove: onClick thiks (change style)
+} 
+
+
+ //React project
+Days 10:  {
+    composant: rectangle : {
+        Un titre H2,
+        Une description: p,
+        un bouton: button,
+    }
+    action: {change thecontaint we are click on the button}
+}
+
+Days 12:  {
+    composant: rectangle:{
+        img arrier plan: img,
+        ing close and detail: ing,
+        title : H3 +  Gras,
+        paragrap: rsponse,
+    }
+
+    action: list all composant
+}
+
+Days 14:  {
+    composant: rectangle:{
+        ing close : ing,
+        ing open : ing,
+        title : H3 +  Gras,
+    }
+
+    action: list all composant
+}
+
+
+Days 15:  {
+    composant: rectangle+ raduis:{
+        ing icon : ing,
+        title : H2,
+        message : p,
+    }
+
+    action: incremante the zeor to end of value
+}
+
+Days 24:  {
+    composant: rectangle+ raduis:{
+        ing product : ing,
+        title : H2,
+        message : p,
+        composant:{
+            img pp: img
+            name: h2
+            date: date
+        }
+    }
+
+}
+
+Days 25:  {
+    composant: rectangle{
+        title of site : H1,
+        menuContaint : ul, a,
+        bacgroundcolor: color
+    }
+
+    action: change color if we are click on there
+}
+
+Days 28:  {
+    composant: rectangle{
+        img : img
+        name : h1
+        bacgroundcolor: color
+        follpwers: panier
+        repository: ul, a
+    }
+
+    action: api change profil depend of profile
+}
+
+Days 33:  {
+    composant: rectangle{
+        image delele, write: img,
+        menuContaint : textarea
+        bacgroundcolor: color
+    }
+
+    action: delete note and add part
+}
+
+Days 37:  {
+    composant: rectangle{
+        image of personne: img,
+        name : h2
+        ref : h2
+        bacgroundcolor: color
+        type : p
+    }
+
+    action: delete note and add part
+}
+
+Days 38 + 42:  {
+    composant: rectangle{
+        image icone: img,
+        text icone : h4
+        bacgroundImage: ing
+    }
+
+    composant: rectangle{
+        image profile: img,
+        name : h2
+        desciption : p
+        bacgroundcolor: color
+    }
+    action: delete note and add part
+}
+
+Days 46:  {
+    composant: rectangle{
+        quesrion: h1,
+        choix : input
+        bacgroundcolor: color
+        sbmit: button
+    }
+
+    action: delete note and add part
+}

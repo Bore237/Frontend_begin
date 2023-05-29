@@ -1,13 +1,16 @@
 import'../style/Cart.css';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function Cart({cart, updateCart}){
     const [isOpen, setIsOpen] =  useState(false)
 
     const total = cart.reduce(
         (acc, plantType) => acc + plantType.amount * plantType.price,
-        0
-    )
+            0
+        )
+    useEffect(() =>{
+        alert(`j'aurai ${total}€ a payer 💰`)
+    })    
    
     return isOpen ?( 
         <div className='lmj-cart'> 
@@ -17,7 +20,7 @@ function Cart({cart, updateCart}){
 			>
 				Fermer
 			</button>
-            {cart.Lenght > 0 ? (
+            {cart.length > 0 ? (
                 <div>
                     <h2>Panier</h2>
 					<ul>
