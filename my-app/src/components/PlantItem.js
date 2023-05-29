@@ -5,17 +5,16 @@ function handleClick(plantNane){
     alert(`vous vulez 1 ${plantNane} ? Très bon choix`)
 }
 
-function PlantItem ({plant}){
+function PlantItem ({id, cover, name, water, light, price}){
 
     return(
-        <li key={plant.id} className='lmj-plant-item' onClick={() => handleClick(plant.name)}>
-            <img className='lmj-plant-item-cover' src={plant.cover} alt={`${plant.name} cover`} />
-            <span>{plant.name} {plant.isSpecialOffer && <span className='lmj-sales'>Sale</span>} </span>
+        <li key={id} className='lmj-plant-item' onClick={() => handleClick(name)}>
+            <img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`} />
 
 			<div>
-				<CareScale careType='water' scaleValue={plant.water} />
-				<CareScale  scaleValue={plant.light} careType='light'/>
-                {plant.isBestSale && <span>🔥</span>}
+				<CareScale careType='water' scaleValue={water} />
+				<CareScale  scaleValue={light} careType='light'/>
+                {/* {plant.isBestSale && <span>🔥</span>} */}
             </div>
         </li>
     )
