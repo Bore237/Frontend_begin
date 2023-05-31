@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_Wave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="conteneur">
+        <h1>Please Login</h1> 
+        <form>
+            <div class="form-control"> 
+                <label class="labelE">  
+                    <span style="transition-delay: 0ms">E</span>
+                    <span style="transition-delay: 50ms">m</span>
+                    <span style="transition-delay: 100ms">a</span>
+                    <span style="transition-delay: 150ms">i</span>
+                    <span style="transition-delay: 200ms">l</span>
+                </label>
+                <input class="label1" type="text" required >
+            </div>
+            <div class="form-control"> 
+                <label class="labelP"> 
+                    <span style="transition-delay: 0ms">P</span>
+                    <span style="transition-delay: 50ms">a</span>
+                    <span style="transition-delay: 100ms">s</span>
+                    <span style="transition-delay: 150ms">s</span>
+                    <span style="transition-delay: 200ms">w</span>
+                    <span style="transition-delay: 250ms">o</span>
+                    <span style="transition-delay: 300ms">r</span>
+                    <span style="transition-delay: 350ms">d</span>
+                </label> 
+                <input class="label2" type="text" required>     
+            </div>    
+                <button class="btn">Login</button> 
+                <p>Don't have an account? Register</p>
+        </form>
+    </div>
+</body>
+
+<script>
+//Trasnlate function
+function translateLabel(inputValue, TransValue){
+    for(let i=0; i<inputValue.length; i++){
+        inputValue[i].style.transform = `translateY(${TransValue}px)`;
+    }
+}
+
+// DOM receive element
+    const btn = document.querySelector('.btn')
+    const label1 = document.querySelector('.label1');
+    const label2 = document.querySelector('.label2');
+    const labelEmail = document.querySelectorAll('.labelE span')
+    const labelPassword = document.querySelectorAll('.labelP span')
+    const form = document.querySelector('.conteneur')
+    let stateLabel1 = false; 
+    let stateLabel2 = false;
+//check yhe event of this button
+btn.addEventListener("click", ()=>{
+    if(label1.value ===''){
+        translateLabel(labelEmail, Number(-20));
+        stateLabel1 = true;
+    }
+    else if(label2.value ===''){
+        translateLabel(labelPassword, Number(-20));
+        stateLabel2 = true;
+    }
+    if((label2.value ==='') && (stateLabel2 === true)){
+            translateLabel(labelPassword, Number(7)); 
+            stateLabel2 = false;
+     }
+})
+
+label1.addEventListener("click", ()=>{
+    translateLabel(labelEmail, Number(-20));
+    stateLabel1 = true;
+    if((label2.value ==='') && (stateLabel2 === true)){
+            translateLabel(labelPassword, Number(7)); 
+            stateLabel2 = false;
+     }
+})
+
+label2.addEventListener("click", ()=>{
+    translateLabel(labelPassword, Number(-20));
+    stateLabel2 = true;
+    if((label1.value ==='') && (stateLabel1 === true)){
+            stateLabel1 = false;
+            translateLabel(labelEmail, Number(7));
+    }
+})
+
+form.addEventListener('click', (e) =>{
+    if((e.target.classList.contains('label2')) ||
+        (e.target.classList.contains('label1')) ||
+        (e.target.classList.contains('btn'))
+        ){
+        console.log('Child element clicked!');
+    }
+    else{
+        if((label1.value ==='') && (stateLabel1 === true)){
+            stateLabel1 = false;
+            translateLabel(labelEmail, Number(7));
+        }
+        if((label2.value ==='') && (stateLabel2 === true)){
+            translateLabel(labelPassword, Number(7)); 
+            stateLabel2 = false;
+        }
+    }
+})
+
+</script>
+</html>
