@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="applause" src="audio/applause.mp3"></audio>
+    <audio id="boo" src="audio/boo.mp3"></audio>
+    <audio id="gasp" src="audio/gasp.mp3"></audio>
+    <audio id="tata" src="audio/tada.mp3"></audio>
+    <audio id="victory" src="audio/victory.mp3"></audio>
+    <audio id="wrong" src="audio/wrong.mp3"></audio>
+    <div class="containt">
+        <button class="btn"> Applaude </button>
+        <button class="btn"> Boo </button>
+        <button class="btn"> gasp </button>
+        <button class="btn"> tata </button>
+        <button class="btn"> Victory </button>
+        <button class="btn"> Wrong </button>
+    </div>
+</body>
+<script>
+    const boutonLecture =  document.querySelectorAll('.btn')
+    const audioElement = document.querySelectorAll('audio')
+
+    for(let i=0; i< boutonLecture.length; i++){
+        boutonLecture[i].addEventListener("click", () => {
+            //si audio est en apuse
+            console.log(audioElement[i]);
+            if (audioElement[i].paused){
+                //lancer audio
+                audioElement[i].play();
+
+           }else{
+                //Mettre en pause
+                audioElement[i].pause();
+           }
+        });
+    }
+</script>
+
+</html>

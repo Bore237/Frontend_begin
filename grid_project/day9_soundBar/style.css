@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body{
+    background-color: rgb(161, 100, 223);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    column-gap: 30px;
+}
+
+.containt{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    height: auto;
+}
+
+button{
+    background-color: #663399;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    margin: 0px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 1.5rem 3rem;
+}
+
+audio:not([controls]) {
+    display: none !important;
+}
+
+audio {
+    width: 300px;
+    height: 54px;
+}
