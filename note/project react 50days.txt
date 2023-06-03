@@ -13,6 +13,24 @@ Days 16: {
     SizeTable: 6c*6l 
     bacgrouncolormove: onClick thiks (change style)
 } 
+////////New//
+Day 21 {
+    depacer les images
+}
+
+Day 22 {
+    Utiliser une application de dessin
+}
+
+Day 11{
+    utilisation des create element
+}
+
+Days 32{
+    checkbuton : 
+
+}
+
 
 
  //React project
@@ -36,7 +54,7 @@ Days 12:  {
     action: list all composant
 }
 
-Days 14:  {
+Days 14 + 15 + : {
     composant: rectangle:{
         ing close : ing,
         ing open : ing,
@@ -47,7 +65,7 @@ Days 14:  {
 }
 
 
-Days 15:  {
+Days 17:  {
     composant: rectangle+ raduis:{
         ing icon : ing,
         title : H2,
