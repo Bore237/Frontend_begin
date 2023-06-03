@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color:  #3484E4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #fff;
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.containt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+h4{
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+.reservoir{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.reservoir .value{
+    font-size: 12px;
+}
+.reservoir .value{
+    font-size: 20px;
+}
+
+.cup{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 150px;
+    height: 330px;
+    border-radius: 0px  0px 40px 40px;
+    border: 4px solid #144fC6;
+    color: #144fC6;
+    background-color: #fff;
+    transition: 0.25s;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.percentage{
+    font-size: 30px;
+    background-color: #6ab3f8;
+    width: 146px;
+    height: 0px;
+    margin: 0px;
+    border-radius: 0px  0px 40px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.robinet{
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(2, 95px);
+    justify-content: center;
+    align-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.rbt_elmt{
+    background-color: #fff;
+    border: 4px solid #144fC6;
+    color: #144fC6;
+    font-size: 14px;
+    border-radius: 0px  0px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+

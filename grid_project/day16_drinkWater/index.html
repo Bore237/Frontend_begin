@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drink water</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="containt">
+        <h1> Drink Water </h1>
+        <h4> Goal: 2 liters </h4>
+        <div class="cup">
+            <div class="reservoir" style="visibility: visible;">
+                <div class="value"> 2L  </div>
+                <div class="name"> Remained </div>
+            </div>
+            <div class="percentage" style="visibility: hidden; height: 0px;">12.5%</div>
+        </div>
+        <p> Select how many glasses of water that you have drank </p>
+        <div class="robinet">
+            <div class="rbt_elmt" id="1">250 <br> ml</div>
+            <div class="rbt_elmt" id="2">250 <br> ml</div>
+            <div class="rbt_elmt" id="3">250 <br> ml</div>
+            <div class="rbt_elmt" id="4">250 <br> ml</div>
+            <div class="rbt_elmt" id="5">250 <br> ml</div>
+            <div class="rbt_elmt" id="6">250 <br> ml</div>
+            <div class="rbt_elmt" id="7">250 <br> ml</div>
+            <div class="rbt_elmt" id="8">250 <br> ml</div>
+        </div>
+    </div>
+</body>
+
+<script>
+//function
+function  drinkWater(spos, posCup, stateCup){
+
+    function styleSmallCup(color, backColor, state, val, bigCupVal){
+        smallCup[val].style.backgroundColor = backColor;
+        smallCup[val].style.color = color;
+        stateCup[val] = state;         
+    }
+
+    function styleBigCup(stateVis, stateReservoir, incLitel, incLow){
+        bigCup.style.color =   '#144FC6';
+        bigCup.style.backgroundColor = '#6ab3f8';
+        bigCup.style.height = `${(spos+1)*41.25}px`;
+        bigCup.innerText = `${12.5 * (spos+1)}%`
+        bigCupVal.innerText = `${2 - (0.25*(spos+incLitel))}%`
+        bigCup.style.visibility = stateVis;   
+        reservoir.style.visibility = stateReservoir;  
+        reservoir.style.height = `${incLow}px`
+    }
+   
+
+    if(stateCup[posCup] === true){
+        if(spos === posCup){
+            styleSmallCup('#144fC6', '#fff', false, posCup);
+        }
+        for(let j=spos; j>posCup; j--){
+            styleSmallCup('#144fC6', '#fff', false, j);
+        }
+    }else{
+        //Remplissage
+        if(spos === posCup){
+            styleSmallCup('#fff','#6AB3F8', true, posCup);
+        }
+        for(let j=0; j<=posCup; j++){
+            styleSmallCup('#fff','#6AB3F8', true, j);
+        }
+    }   
+    spos = posCup;
+
+    if(stateCup[0] ===  false){
+        styleBigCup('hidden', 'visible', 0);
+    }
+    else if(stateCup[7] ===  true){
+        styleBigCup('visible', 'hidden',1 ,0);
+    }
+    else{
+        styleBigCup('visible', 'visible',1);
+    }
+    return spos;   
+}
+
+    const smallCup = document.querySelectorAll('.robinet div');
+    const bigCup = document.querySelector('.percentage');
+    const bigCupVal = document.querySelector('.value');
+    const reservoir = document.querySelector('.reservoir');
+    let stateCup = Array(8).fill(false);
+    let pos = 0;
+ 
+    smallCup[0].addEventListener("click", () =>{
+                pos = drinkWater(pos, Number(0), stateCup)});
+ 
+    smallCup[1].addEventListener("click", () =>{
+                pos = drinkWater(pos, Number(1), stateCup)});
+    smallCup[2].addEventListener("click",  ()=>{
+                pos = drinkWater(pos, Number(2),stateCup)});
+
+    smallCup[3].addEventListener("click",  () =>{
+                pos = drinkWater(pos, Number(3),stateCup)});
+
+    smallCup[4].addEventListener("click", () =>{
+                pos = drinkWater(pos, Number(4),stateCup)});
+
+    smallCup[5].addEventListener("click", () =>{
+                pos = drinkWater(pos, Number(5),stateCup)});
+
+    smallCup[6].addEventListener("click", () =>{
+                pos = drinkWater(pos, Number(6),stateCup)});
+
+    smallCup[7].addEventListener("click", () =>{
+                pos = drinkWater(pos, Number(7),stateCup)});
+
+</script>
+</html>
