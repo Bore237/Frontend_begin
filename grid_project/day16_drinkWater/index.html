@@ -43,10 +43,8 @@ function  drinkWater(spos, posCup, stateCup){
     }
 
     function styleBigCup(stateVis, stateReservoir, incLitel, incLow){
-        bigCup.style.color =   '#144FC6';
-        bigCup.style.backgroundColor = '#6ab3f8';
-        bigCup.style.height = `${(spos+1)*41.25}px`;
-        bigCup.innerText = `${12.5 * (spos+1)}%`
+        bigCup.style.height = `${(spos+incLitel)*41.25}px`;
+        bigCup.innerText = `${12.5 * (spos+incLitel)}%`
         bigCupVal.innerText = `${2 - (0.25*(spos+incLitel))}%`
         bigCup.style.visibility = stateVis;   
         reservoir.style.visibility = stateReservoir;  
@@ -79,7 +77,11 @@ function  drinkWater(spos, posCup, stateCup){
         styleBigCup('visible', 'hidden',1 ,0);
     }
     else{
-        styleBigCup('visible', 'visible',1);
+        if(stateCup[posCup] === true){
+            styleBigCup('visible', 'visible',1);
+        }else{
+            styleBigCup('visible', 'visible',0);
+        }
     }
     return spos;   
 }
