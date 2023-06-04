@@ -31,6 +31,10 @@ Days 32{
 
 }
 
+Days 34{
+    Animation utilisation du positionement absolue
+
+}
 
 
  //React project
