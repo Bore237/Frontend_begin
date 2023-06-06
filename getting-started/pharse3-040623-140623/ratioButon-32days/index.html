@@ -11,16 +11,82 @@
     <div class="containt">
         <h2>How do you want your project to be</h2>
         <div class="ctn-btn">
-            <div class="btn1"> </div>
-            <div class="circle1"> </div>
+            <div class="btn" id="btn1"> </div>
+            <div class="circle" id="circle1"> </div>
             <div class="text1">Good</div>
-            <div class="btn2"> </div>
-            <div class="circle2"> </div>
+            <div class="btn" id="btn2"> </div>
+            <div class="circle" id="circle2"> </div>
             <div class="text2">Cheap</div>
-            <div class="btn3"> </div>
-            <div class="circle3"> </div>
+            <div class="btn" id="btn3"> </div>
+            <div class="circle" id="circle3"> </div>
             <div class="text3">Fast</div>
         </div>
     </div>
 </body>
 </html>
+
+<script>
+    //function 
+    function checking(pos, posAllBtn, oderElment){
+        let count = 0;
+        if(posAllBtn[pos]){
+            posAllBtn[pos] = false;
+            btn[pos].style.backgroundColor = '#D0D0D0';
+            cir[pos].style.gridArea = `box${pos}0`;
+        }else{
+            posAllBtn[pos] = true; 
+            btn[pos].style.backgroundColor = 'blue';
+            cir[pos].style.gridArea = `box${pos}1`;
+            oderElment[2] = pos;
+
+            //Descter le premier bouton activer si le tout est activés
+            newTable = posAllBtn.filter(element => element === true);
+            console.log(newTable.length)
+            if(newTable.length === 1){
+                oderElment[0] = pos;
+            }
+            else if(newTable.length === 2){
+                oderElment[1] = pos; 
+            }
+            else if(newTable.length === 3){
+                //Desactiver le bouton precedent
+                posAllBtn[oderElment[0]] = false;
+                btn[oderElment[0]].style.backgroundColor = '#D0D0D0';
+                cir[oderElment[0]].style.gridArea = `box${oderElment[0]}0`;   
+                //Refaire le classement
+                oderElment[0] = oderElment[1];
+                oderElment[1] = pos;
+            }
+        }
+    }
+
+    //Variable
+    const btn =   document.querySelectorAll(".btn");
+    const cir =  document.querySelectorAll(".circle");
+    const gridElmt = document.querySelector('.ctn-btn');
+    let posAllBtn= [false, false, false];
+    let oderElment = [0,1,2];
+
+    //Main
+    btn[0].addEventListener('click', ()=>{
+        checking(0, posAllBtn, oderElment);
+    })
+
+    cir[0].addEventListener('click', ()=>{
+        checking(0, posAllBtn, oderElment);
+    })
+
+    btn[1].addEventListener('click', ()=>{
+        checking(1, posAllBtn, oderElment);
+    })
+    cir[1].addEventListener('click', ()=>{
+        checking(1, posAllBtn, oderElment);
+    })
+
+    btn[2].addEventListener('click', () =>{
+        checking(2, posAllBtn, oderElment);
+    })
+    cir[2].addEventListener('click', ()=>{
+        checking(2, posAllBtn, oderElment);
+    })
+</script>

@@ -21,39 +21,33 @@ body{
 
 .ctn-btn{
     display: grid;
-    grid-template-columns: 40px 40px 1fr;
+    grid-template-columns: 26px 40px 1fr;
     grid-template-rows: 40px 40px 40px;
     gap: 10px;
     grid-template-areas: 
-    "box box label"
-    "box1 box1 label1"
-    "box2 box2 label2";
+    "box00 box01 label"
+    "box10 box11 label1"
+    "box20 box21 label2";
     justify-content: center;
     align-items: center;
 }
 
-.btn1{
+.btn{
     width: 80px;
     height: 40px;
     background-color:  #D0D0D0;
-    grid-area: box;
     border-radius: 20px 20px;
 }
-
-.btn2{
-    width: 80px;
-    height: 40px;
-    background-color: #D0D0D0;
-    grid-area: box1;
-    border-radius: 20px 20px;
+#btn1{
+    grid-area: box00;
 }
 
-.btn3{
-    width: 80px;
-    height: 40px;
-    background-color: #D0D0D0;
-    grid-area: box2;
-    border-radius: 20px 20px;
+#btn2{
+    grid-area: box10;
+}
+
+#btn3{
+    grid-area: box20;
 }
 
 .text1{
@@ -68,29 +62,22 @@ body{
     grid-area: label2;
 }
 
-.circle1{
+.circle{
     width: 35px;
     height: 35px;
-    grid-area: box;
     background-color: #fff !important;
     border-radius: 50%;
     margin: 5px;
 }
 
-.circle2{
-    width: 35px;
-    height: 35px;
-    grid-area: box1;
-    background-color: #fff !important;
-    border-radius: 50%;
-    margin: 5px;
+#circle1{
+    grid-area: box00;
 }
 
-.circle3{
-    width: 35px;
-    height: 35px;
-    grid-area: box2;
-    background-color: #fff !important;
-    border-radius: 50%;
-    margin: 5px;
+#circle2{
+    grid-area: box10;
+}
+
+#circle3{
+    grid-area: box20;
 }
