@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="myCanvas" width="700" height="600"> </canvas>
+    <div class="menu">
+        <div class="btn" id="dinc">-</div>
+        <input class="btn" type="text" value="10" id="size" readonly>
+        <div class="btn" id="inc">+</div>
+        <input class="btn" id="color" type="color" >
+        <div class="btn" id="cancel">X</div>
+    </div>
+</body>
+</html>
+
+<script>
+    //function 
+    function drawCircle(x, y, color, size) {
+        const rect = canvaselt.getBoundingClientRect();
+        x = x - rect.left;
+        y = y - rect.top;
+
+        ctx.beginPath();
+        ctx.arc(x, y, parseInt(size), 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        //ctx.stroke();
+        ctx.fill();
+    }
+
+    function drawLine(x1, y1, x, y,color, size){
+        ctx.lineWidth = parseInt(size);
+        ctx.strokeStyle = color;
+        ctx.beginPath();
+        x = x - canvaselt.offsetLeft;
+        y = y - canvaselt.offsetTop;
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x,y)
+        ctx.stroke();
+    }
+    //Dom Element
+    const canvaselt = document.getElementById("myCanvas");
+    const plusElt   = document.getElementById("inc");
+    const moinsElt  = document.getElementById("dinc");
+    const sizeElt   = document.getElementById("size");
+    const colorElt  = document.getElementById("color");
+    const cancelElt = document.getElementById("cancel");
+    let ctx = canvaselt.getContext("2d");
+
+    //Varable
+    let size = sizeElt.value;
+    let color = colorElt.value;
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    //Main
+    cancelElt.addEventListener("click", () =>{
+        ctx.clearRect(0,0, canvaselt.width, canvaselt.height);
+    })
+    plusElt.addEventListener("click", () =>{
+        if(parseInt(sizeElt.value) < 50){
+            sizeElt.value =  `${parseInt(sizeElt.value) + 5}`
+        }
+    })
+    moinsElt.addEventListener("click", () =>{
+        if(parseInt(sizeElt.value) > 5){
+            sizeElt.value =  `${parseInt(sizeElt.value) - 5}`
+        }
+    })
+
+    canvaselt.addEventListener('mouseup',()=>{
+        isDrawing = false;
+    })
+
+    canvaselt.addEventListener('mousedown', (e) =>{
+        isDrawing = true;
+        lastX = e.clientX;
+        lastY = e.clientY;
+    });
+
+    canvaselt.addEventListener('mousemove', (e) => {
+        if(isDrawing){
+            drawCircle(e.clientX, e.clientY, colorElt.value, sizeElt.value);
+            //drawLine(lastX, lastY, e.clientX, e.clientY, colorElt.value, sizeElt.value);
+            lastX = e.clientX;
+            lastY = e.clientY;
+        }
+    })
+
+</script>
