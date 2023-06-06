@@ -30,6 +30,7 @@ body{
     "box20 box21 label2";
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn{
