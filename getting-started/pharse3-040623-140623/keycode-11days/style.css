@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #E1E1E1;
+    font-family: 'Trebuchet MS', 'Muli',sans-serif;
+}
+
+.main{
+    border: 1px solid #999;
+    background-color: #EEEEEE;
+    padding: 0px 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 10px 60px;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 20px;
+}
+
+.labelkey{
+    text-align: center;
+}
+.boxValue{
+    border: 1px solid #999;
+    height: 60px;
+    background-color: white;
+    font-size: 20px;
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+}

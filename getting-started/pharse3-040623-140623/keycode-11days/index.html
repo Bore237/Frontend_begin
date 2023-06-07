@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keycodes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main"> 
+        <h3> Press any key to get  the code</h3>
+    </div>
+    <div class="grid" style="visibility: hidden;">
+        <div class="labelkey"> event.key</div>
+        <div class="labelkey"> event.keyCode </div>
+        <div class="labelkey"> event.code </div>
+        <div class="boxValue" ></div>
+        <div class="boxValue" > </div>
+        <div class="boxValue" > </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const keyElmt = document.querySelectorAll('.boxValue')
+    const main = document.querySelector(".main")
+    const grid = document.querySelector(".grid")
+
+    document.addEventListener('keydown', (event)=>{
+        main.style.display = 'none';
+        grid.style.visibility = 'visible';
+        const tab = [event.key, event.keyCode, event.code]
+        //Afficher les element
+        let count = 0;
+        keyElmt.forEach(element =>{
+            element.innerText = `${tab[count]}`;
+            count++;
+        })
+    })
+</script>
