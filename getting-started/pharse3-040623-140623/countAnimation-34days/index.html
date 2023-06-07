@@ -48,12 +48,12 @@
             }, (500 * count));
             count = count + 2;
             prevTime =  500 * (count-1);
-            if(count >6){
+            
+            setTimeout(( ) =>{
                 final.style.scale ='1'; 
-                counter.style.transform='translate(-50%, -50%) scale(1)';
-            }
+                counter.style.transform='translate(-50%, -50%) scale(0)';
+            },4000)
         })
-
     }
 
     paly()
