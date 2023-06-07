@@ -10,10 +10,10 @@
 <body>
     <div class="counter hide" id="dis"> 
         <div class="num">
-            <span>3</span>
-            <span>2</span>
-            <span>1</span>
-            <span>0</span>
+            <span class="out">3</span>
+            <span class="out">2</span>
+            <span class="out">1</span>
+            <span class="in">0</span>
         </div>
         <h4>Get Ready</h4>
     </div>
@@ -30,30 +30,31 @@
     const final = document.querySelector('.final.show')
 
     function paly(){
-        final.style.scale ='0'; 
-        counter.style.transform='translate(-50%, -50%) scale(1)';
+        final.className ='final'; 
+        counter.className = 'counter';
         let count=1;
         let prevTime = 0;
 
-        numElt.forEach(element =>{
-            //
+        for (let index = 0; index < numElt.length; index++) {
+            numElt.forEach(element =>{
+                element.className = '';
+            })
             setTimeout(()=>{
-                element.className = 'in';
-                console.log("hhhh1")
+                numElt[index].className = 'in';
             }, 0 + prevTime);
             //
             setTimeout(()=>{
-                element.className = 'out';
-                console.log("hhhh2")
+                numElt[index].className = 'out';
             }, (500 * count));
             count = count + 2;
             prevTime =  500 * (count-1);
             
             setTimeout(( ) =>{
-                final.style.scale ='1'; 
-                counter.style.transform='translate(-50%, -50%) scale(0)';
+                final.className ='final show'; 
+                counter.className = 'counter hide';
             },4000)
-        })
+        }
+
     }
 
     paly()
