@@ -1,18 +1,19 @@
 import '../style/QuestionFrame.css'
-import{Iconfrom} from '@iconify/react'
+import { Icon } from '@iconify/react';
 
-function QuestionFrame({reponse, question, images, btn}){
+function QuestionFrame({reponse, question}){
     return(
-        <li className=''> 
-            <div className='frame'>
-                <div className='question'> 
-                    <h3>{question}</h3>
-                </div>
-                <div className='btn'>  
-                    <Icon icon="carbon:close-filled" color="gray" />
-                </div>
-                <div className='reponse'> {reponse} </div>
-            </div>         
-        </li>
+        <div className='frame'>
+            <div className='question'> 
+                <h3>{question}</h3>
+            </div>
+            <div className='btn'>  
+                <Icon icon="majesticons:chevron-down" color="gray" width="30" />
+                {/* <Icon icon="carbon:close-filled" color="gray" width="30"/> */}
+            </div>
+            <div className='reponse'> <p> {reponse} </p></div>
+        </div>         
     )
 }
+
+export default QuestionFrame

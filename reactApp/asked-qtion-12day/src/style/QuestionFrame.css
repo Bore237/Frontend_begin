@@ -5,8 +5,29 @@
     border-radius: 10px;
     overflow: hidden;
     transition: 0.3s;
+    display: grid;
+    grid-template-areas: 
+    "question btn"
+    " resp resp";
+    grid-template-columns: 550px 40px;
+    grid-template-rows: 60px 50px;
+    gap: 10px;
+    align-items: center;
 }
 
 .question{
-    
+    grid-area: question;
+    margin: 5px 20px;
+    flex-wrap: wrap;
+}
+
+.question h3{
+    margin: 0 45px 0 0;
+}
+.btn{
+    grid-area: btn;
+}
+
+.reponse{
+    grid-area: resp;
 }
