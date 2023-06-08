@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drag-ndrop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box "> 
+        <div class="fill" draggable="true"> </div>
+    </div>
+    <div class="box"> </div>
+    <div class="box"> </div>
+    <div class="box"> </div>
+    <div class="box"> </div>
+</body>
+</html>
+
+<script>
+    const image = document.querySelector('.box div');
+    const box = document.querySelectorAll('.box');
+    let id = [''];
+
+    //Recuperer element lorqu'on clique dessus    
+    box.forEach(element =>{
+        element.addEventListener('click',() =>{
+            id[0] = element;
+            return 0;
+        } )
+    })
+
+    //Code à exécuter lorsque l'élément est en train d'être déplacé
+    image.addEventListener('dragstart', (event) =>{
+        const style = window.getComputedStyle(image); //récupérer les styles appliqués à l'élément.
+        const backgroundImage = style.getPropertyValue('background-image');
+        ///
+        console.log(id[0]);
+
+        event.dataTransfer.setData('text/plain', this.innerHTML);
+        box.forEach(element =>{
+            element.className ='box';
+            //element.removeChild(image);
+        })
+    });
+    
+    //Code à exécuter lorsque l'élément est en train d'être déplacé sur une zone cible
+    box.forEach(element =>{
+        element.addEventListener('dragover', function(event) {
+            event.preventDefault(); //empecher evenement  pas defaut
+            element.classList.add('hovered');
+        });
+        element.className ='box';
+    })
+
+    //Code s'escécute lorsque on lache object
+    box.forEach(element =>{
+        element.addEventListener('drop', function(event) {
+            event.preventDefault(); //empecher evenement  pas defaut
+            const data = event.dataTransfer.getData("text/plain");
+            const elementData = element.createElement(`${data}`);
+            //element.style.backgroundImage = data;
+            // console.log('dvqvfv', elementData);
+            event.target.appendChild(data);
+            element.classList.remove('hovered');
+        });
+    })
+    // Code à exécuter lorsque l'élément a été déposé sur une zone cible ou annulé
+    box.forEach(element =>{
+        element.addEventListener("dragend", function(event) {
+            element.className ='box';
+        });
+    })
+</script>

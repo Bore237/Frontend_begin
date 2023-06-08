@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: steelblue;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 0px;
+    gap: 15px;
+}
+
+.box{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border: 1px solid b;
+}
+
+.fill{
+    width: 150px;
+    height: 150px;
+    background-image: url('./carrouselImg1.PNG');
+    cursor: pointer;
+}
+
+.hovered{
+    background-color: black;
+    border-color: white;
+    border-style: dashed;
+}

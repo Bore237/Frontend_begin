@@ -1,0 +1,12 @@
+.frame{
+    width: 600px;
+    height: 86px;
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.question{
+    
+}
