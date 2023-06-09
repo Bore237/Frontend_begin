@@ -15,6 +15,7 @@ function App() {
                     <QuestionFrame 
                     reponse={reponse} 
                     question={question}
+                    id = {id}
                     />
                 </div>
             ))}

@@ -1,6 +1,4 @@
 .frame{
-    width: 600px;
-    height: 86px;
     border: 1px solid #9fa4a8;
     border-radius: 10px;
     overflow: hidden;
@@ -10,15 +8,21 @@
     "question btn"
     " resp resp";
     grid-template-columns: 550px 40px;
-    grid-template-rows: 60px 50px;
+    grid-template-rows: 85px ;
     gap: 10px;
     align-items: center;
+}
+
+.frame.show{
+    grid-template-rows: 60px 50px;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 
+                0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .question{
     grid-area: question;
     margin: 5px 20px;
-    flex-wrap: wrap;
 }
 
 .question h3{
@@ -29,5 +33,12 @@
 }
 
 .reponse{
+    display: none;
+    margin: 5px 20px;
+}
+
+.reponse.show{
+    display: block;
     grid-area: resp;
+    margin: 5px 20px;
 }
