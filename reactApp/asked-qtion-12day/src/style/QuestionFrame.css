@@ -2,7 +2,7 @@
     border: 1px solid #9fa4a8;
     border-radius: 10px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.2s;
     display: grid;
     grid-template-areas: 
     "question btn"
