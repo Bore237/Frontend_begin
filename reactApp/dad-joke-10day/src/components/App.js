@@ -5,9 +5,7 @@ import {jokeDatas} from '../datas/jokeDatas'
 function App() {
   return (
     <div className="App">
-        <JokeCard
-            joke={jokeDatas}
-        />
+        <JokeCard/>
     </div>
   );
 }
