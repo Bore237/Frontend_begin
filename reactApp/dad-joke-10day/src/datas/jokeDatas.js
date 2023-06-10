@@ -1,0 +1,15 @@
+export const jokeDatas= [
+    'Joke goes start here',
+    'Did you hear about the scientist who was lab partners with a pot of boiling water? He had a very esteemed colleague.',
+    'A beekeeper was indicted after he confessed to years of stealing at work. They charged him with emBEEzlement',
+    'Two peanuts were walking down the street. One was a salted',
+    "I went to the store to pick up eight cans of sprite... when I got home I realized I'd only picked seven up",
+    "An apple a day keeps the bullies away. If you throw it hard enough.",
+    "Have you ever heard of a music group called Cellophane? They mostly wrap.",
+    "My wife said I was immature. So I told her to get out of my fort.",
+    `What did the traffic light say to the car as it passed? "Don't look I'm changing!"`,
+    `I thought my wife was joking when she said she'd leave me if I didn't stop signing "I'm A Believer"... Then I saw her face.`,
+    `I just got fired from a florist, apparently I took too many leaves.`,
+    `Why did the kid throw the clock out the window? He wanted to see time fly!`,
+    'Why is the ocean always blue? Because the shore never waves back.',
+]
