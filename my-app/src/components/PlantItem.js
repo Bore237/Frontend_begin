@@ -2,7 +2,7 @@ import CareScale  from "./CareScale"
 import '../style/PlantItem.css'
 
 function handleClick(plantNane){
-    alert(`vous vulez 1 ${plantNane} ? Très bon choix`)
+    alert(`vous voulez 1 ${plantNane} ? Très bon choix`)
 }
 
 function PlantItem ({id, cover, name, water, light, price}){

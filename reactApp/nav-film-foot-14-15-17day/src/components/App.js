@@ -1,19 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import '../style/App.css';
 import FootNew from './FootNew';
-import CartMovie from './CartMovie';
-import Nav from './Nav';
+import CartMovieList from './CartMovieList';
+import NavTool from './NavTool';
 
 function App() {
   return (
     <div className="App">
         <header className="App-header">
-            <Nav> </Nav>
+            <NavTool/> 
         </header>
 
-        <body className='App-body'>
-            <CartMovie> </CartMovie>
-        </body>
+        <main className='App-body'>
+            <CartMovieList/>
+        </main>
 
         <footer className='App-footer'>
             <FootNew> </FootNew>
