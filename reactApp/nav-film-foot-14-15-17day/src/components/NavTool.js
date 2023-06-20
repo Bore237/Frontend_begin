@@ -1,6 +1,18 @@
-import '../style/Nav.css'
+import '../style/Nav.css';
+import { useState } from 'react';
+
 
 function NavTool(){
+
+    const [valeur, setValeur] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    };
+
+    const handleChange = (event) =>{
+        setValeur(event.target.value);
+    }
 
     return(
         <div className='nav-containt'>
@@ -14,13 +26,19 @@ function NavTool(){
                     <div className='ligne ligne2'></div>
                 </div>
             </div>
-            <form id="form">
-                <input className='search' type='text' placeholder='Search'/> 
+            <form id="form" onSubmit={handleSubmit}>
+                <input 
+                    className='search' 
+                    type='text' 
+                    placeholder='Search'
+                    onChange={handleChange}
+                /> 
             </form>
 
         </div>
     )
 }
+
 
 export default NavTool;
 
