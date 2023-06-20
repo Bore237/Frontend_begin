@@ -1,10 +1,18 @@
+import React from 'react';
 import '../style/FootNew.css'
 
-function FootNew(){
+class FootNew extends React.Component{
+    constructor(props){
+        super(props);
 
-    return(
-        <div> </div>
-    );
+    }
+
+    render(){
+
+        return(
+            <div> </div>
+        );
+    }
 }
 
 export default FootNew;
