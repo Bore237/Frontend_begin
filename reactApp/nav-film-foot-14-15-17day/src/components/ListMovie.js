@@ -17,8 +17,10 @@ function ListMovie({searchTerm}){
         .then(data => {setDataMovie(data.results);
         })
         .catch(error =>{
-            alert('Mauvaise conection',error);
-            window.location.reload();
+            setTimeout(() =>{
+                alert('Mauvaise conection',error);
+                window.location.reload()
+            },2000);
         } )
     }
     //Fait appel lors de la creation du composant
