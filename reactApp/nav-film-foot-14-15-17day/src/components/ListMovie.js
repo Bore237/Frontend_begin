@@ -7,7 +7,6 @@ const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c
 
 
 function ListMovie({searchTerm}){
-    let count=0;
     const [dataMovie, setDataMovie] = useState([]);
 
     //use useEffet for fresh the element after create the coponenent
@@ -42,15 +41,14 @@ function ListMovie({searchTerm}){
     return(
         <div  className="Cart-list" > 
             {dataMovie.map(movie =>(
-                <div key={count++}>
-                    <CartMovie
-                        id={movie.id}
-                        title={movie.title}
-                        note={movie.vote_average}
-                        img={movie.poster_path}
-                        overview={movie.overview}
-                    />
-                </div>
+                <CartMovie
+                    key={movie.id}
+                    id={movie.id}
+                    title={movie.title}
+                    note={movie.vote_average}
+                    img={movie.poster_path}
+                    overview={movie.overview}
+                />
             ))}
         </div>
     );

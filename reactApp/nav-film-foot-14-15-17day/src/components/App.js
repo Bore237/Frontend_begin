@@ -3,13 +3,13 @@ import FootNew from './FootNew';
 import ListMovie from './ListMovie';
 import NavTool from './NavTool';
 import { useState } from 'react';
+import {footerDatas} from '../datas/dataMovie'
 
 
 function App() {
   const [search, setsearch]  = useState("");
 
   const handleSubmit = (e) =>{
-    const form = document.getElementById('form');
     const label = document.querySelector('input');
     setsearch(label.value);
     label.value='';
@@ -27,7 +27,18 @@ function App() {
         </main>
 
         <footer className='App-footer'>
-            <FootNew> </FootNew>
+          {footerDatas.map((Element) =>(
+            < FootNew
+              key = {Element.id} 
+              title = {Element.title}
+              iconName = {Element.iconName}
+              color = {Element.color}
+              height = {Element.height}
+              width = {Element.width}
+              max = {Element.max}
+              pasInterval = {Element.pasInterval}
+            /> 
+          ))}
         </footer>
     </div>
   );

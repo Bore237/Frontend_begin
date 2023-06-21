@@ -31,7 +31,7 @@ function CartMovie({id, title, img, note, overview}){
     }, [note])
 
     return(
-        <li key={id+'card'} id={'cart'+id} className='Cart-containt' 
+        <li id={'cart'+id} className='Cart-containt' 
             onMouseMove={() =>{
                 showOverview(id, true);
             }}

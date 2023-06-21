@@ -1,16 +1,33 @@
 
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1'
-const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
-
-
-let data =[ ];
-
-fetch(API_URL)
-.then((resul) =>{ 
-    return resul.json();
-})
-.then((datas) =>{
-    data = [datas.results];
-})
-
-export const  dataMovie = data;
+export const footerDatas = [
+    {
+        id: 1,
+        iconName: "mingcute:facebook-fill",
+        color : "white",
+        width: "65" ,
+        height:"65",
+        title: "Facebook Fans",
+        pasInterval: 50,
+        max: 12000,
+    },
+    {
+        id:2,
+        iconName: "ri:twitter-fill",
+        color : "white",
+        width: "65" ,
+        height:"65",
+        title: "Twitter Followers",
+        pasInterval: 20,
+        max: 5000,
+    },
+    {
+        id:3,
+        iconName: "ant-design:youtube-filled",
+        color : "white",
+        width: "65" ,
+        height:"65",
+        title: "YouTube Subscribers",
+        pasInterval: 30,
+        max: 7500,
+    },
+]
