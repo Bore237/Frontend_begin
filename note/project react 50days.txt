@@ -13,6 +13,7 @@ Days 16: {
     SizeTable: 6c*6l 
     bacgrouncolormove: onClick thiks (change style)
 } 
+
 ////////New//
 Day 21 {
     depacer les images
@@ -90,7 +91,6 @@ Days 24:  {
             date: date
         }
     }
-
 }
 
 Days 25:  {
@@ -103,17 +103,7 @@ Days 25:  {
     action: change color if we are click on there
 }
 
-Days 28:  {
-    composant: rectangle{
-        img : img
-        name : h1
-        bacgroundcolor: color
-        follpwers: panier
-        repository: ul, a
-    }
 
-    action: api change profil depend of profile
-}
 
 Days 33:  {
     composant: rectangle{
@@ -137,7 +127,7 @@ Days 37:  {
     action: delete note and add part
 }
 
-Days 38 + 42:  {
+Days 38 + 42:  {  => phone
     composant: rectangle{
         image icone: img,
         text icone : h4
@@ -153,7 +143,7 @@ Days 38 + 42:  {
     action: delete note and add part
 }
 
-Days 46:  {
+Days 46 + 47 +  28 + 24 :  {  The grid of 4 elements
     composant: rectangle{
         quesrion: h1,
         choix : input
@@ -162,4 +152,16 @@ Days 46:  {
     }
 
     action: delete note and add part
+}
+
+Days 28:  {
+    composant: rectangle{
+        img : img
+        name : h1
+        bacgroundcolor: color
+        follpwers: panier
+        repository: ul, a
+    }
+
+    action: api change profil depend of profile
 }

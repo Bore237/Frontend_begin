@@ -1,0 +1,30 @@
+.Quiz-title{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.Btn{
+    width: 100%;
+    background-color: blueviolet;
+    font-size: 32px;
+    color: white;
+}
+
+.Quiz p{
+    font-size: 26px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.label-quiz{
+    padding-left: 15px;
+    font-size: 17px;
+}
+
+.Quiz{
+    border: 2px solid;
+    background-color: rgb(192, 187, 187);
+    border-radius: 5px;
+    width: 90%;
+}
