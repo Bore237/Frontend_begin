@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/FootNew.css'
-import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react'
 
 
 class FootNew extends React.Component{
