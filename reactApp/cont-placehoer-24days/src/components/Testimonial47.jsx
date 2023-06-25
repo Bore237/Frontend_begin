@@ -8,13 +8,14 @@ class Testimonial extends React.Component{
     }
 
     render(){
-        const data = this.props.text
+        const data = this.props.datas
+        console.log("text datas", data)
         return(
             <div className="containt"> 
                 <div className="grid-text">
-                    <Icon icon="bi:quote" color="white" width="30" height="30" rotate={2} />
-                    <p className="text"> {data} </p>
-                    <Icon icon="bi:quote" color="white" width="30" height="30" />
+                    <Icon className= "icon-left" icon="bi:quote" color="white" width="30" height="30" rotate={2} />
+                    <p className="text"> {data[0].text} </p>
+                    <Icon className= "icon-right" icon="bi:quote" color="white" width="30" height="30" />
                 </div>
             </div>
         )
