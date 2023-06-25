@@ -13,6 +13,7 @@ class Testimonial extends React.Component{
         return(
             <div className="containt"> 
                 <div className="grid-text">
+                    <div className="progress-bar"> </div>
                     <Icon className= "icon-left" icon="bi:quote" color="white" width="30" height="30" rotate={2} />
                     <p className="text"> {data[0].text} </p>
                     <Icon className= "icon-right" icon="bi:quote" color="white" width="30" height="30" />
