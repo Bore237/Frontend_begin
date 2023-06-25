@@ -5,6 +5,7 @@ import Quiz46 from './Quiz46';
 import Testimonial from './Testimonial47.jsx';
 import {quizData} from "../data/quizData"
 import {placeholderData} from "../data/placeholerData"
+import {testimonials} from "../data/testData"
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
             <Quiz46 
                 quizData = {quizData}
             /> 
-            <Testimonial /> 
+            {/* <Testimonial 
+              text = {testimonials}
+            />  */}
         </div>
     </div>
   );

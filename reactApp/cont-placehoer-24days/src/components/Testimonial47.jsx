@@ -1,8 +1,19 @@
+import React from "react";
+import { Icon } from '@iconify/react';
 
-function Testimonial(){
-    return(
-        <div> </div>
-    )
+class Testimonial extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        const data = this.props.text
+        return(
+            <div className="containt"> 
+
+            </div>
+        )
+    }
 }
 
 export default Testimonial
