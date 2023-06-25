@@ -17,11 +17,26 @@ class Testimonial extends React.Component{
     constructor(props){
         super(props);
     }
+    state ={
+        index: 0,
+    };
+
+    componentDidMount(){
+        const length = this.props.datas.length - 1;
+        setInterval(() => {
+            if(this.state.index < length){
+                this.setState({index: this.state.index + 1})
+                console.log("fdgsgtsehetsdg",this.props.datas.length)
+            }else{
+                this.setState({index: 0})
+            }
+        }, 10000);
+    }
+
 
     render(){
-        const data = this.props.datas
-        console.log("text datas", data)
-        const {text, name, photo, position} = data[0]
+        const {index} = this.state;
+        const {text, name, photo, position} = this.props.datas[index]
         return(
             <div className="containt"> 
                 <div className="grid-text">
