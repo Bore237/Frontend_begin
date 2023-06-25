@@ -9,6 +9,7 @@
     background-color: #476ce4;
     border-radius: 10px;
     width: 95%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .grid-text{
@@ -37,7 +38,6 @@
     grid-row: 2/3;
     grid-column: 2/3;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
     color: #fff;
     text-align: justify;
     margin: 0px;
@@ -54,6 +54,35 @@
     animation: grow 10s linear infinite;
 }
 
+.containt-profil{
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    grid-template-rows: 20px 55px;
+    row-gap : 10px;
+    column-gap: 10px;
+    grid-template-areas: 
+        "photos names"
+        "photos position";
+}
+
+.containt-profil img{
+    grid-area: photos;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.containt-profil h4{
+    grid-area: names;
+    font-size: 16px;
+    margin: 0px;
+}
+
+.containt-profil p{
+    grid-area: position;
+    font-size: 16px ;
+    text-align: left;
+}
 
 @keyframes grow {
     0% {
