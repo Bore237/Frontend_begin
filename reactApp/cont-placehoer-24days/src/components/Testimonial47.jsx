@@ -26,7 +26,6 @@ class Testimonial extends React.Component{
         setInterval(() => {
             if(this.state.index < length){
                 this.setState({index: this.state.index + 1})
-                console.log("fdgsgtsehetsdg",this.props.datas.length)
             }else{
                 this.setState({index: 0})
             }
